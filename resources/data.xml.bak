@@ -181,4 +181,5 @@
         </anim>
     </sprite>
     <music atlasID="0" desc="This an animated whoosh sound for moving buttons" id="24" loop="true" name="SFX_Whoosh" oid="-1" pan="0" shared="false" stream="false" type="mp3" volume="1"/>
+    <music atlasID="0" desc="" id="29" loop="true" name="Whirr" oid="-1" pan="0" shared="false" stream="false" type="mp3" volume="1"/>
 </pack>

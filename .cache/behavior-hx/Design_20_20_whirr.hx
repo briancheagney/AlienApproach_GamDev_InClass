@@ -61,14 +61,37 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class Design_8_8_DieWhenOffScreen extends ActorScript
+class Design_20_20_whirr extends ActorScript
 {
+	public var _boolwhirring:Bool;
+	
+	/* ========================= Custom Event ========================= */
+	public function _customEvent_Moving():Void
+	{
+		if((_boolwhirring == false))
+		{
+			_boolwhirring = true;
+			loopSoundOnChannel(getSound(29), 2);
+		}
+	}
+	
+	/* ========================= Custom Event ========================= */
+	public function _customEvent_NotMoving():Void
+	{
+		if((_boolwhirring == true))
+		{
+			_boolwhirring = false;
+			stopSoundOnChannel(2);
+		}
+	}
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
 		nameMap.set("Actor", "actor");
+		nameMap.set("bool-whirring", "_boolwhirring");
+		_boolwhirring = false;
 		
 	}
 	
@@ -76,17 +99,41 @@ class Design_8_8_DieWhenOffScreen extends ActorScript
 	{
 		
 		/* ======================== When Creating ========================= */
-		actor.makeAlwaysSimulate();
+		_boolwhirring = false;
 		
-		/* ======================== When Updating ========================= */
-		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		/* =========================== Keyboard =========================== */
+		addKeyStateListener("left", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
 		{
-			if(wrapper.enabled)
+			if(wrapper.enabled && pressed)
 			{
-				if(!(actor.isOnScreen()))
-				{
-					recycleActor(actor);
-				}
+				_customEvent_Moving();
+			}
+		});
+		
+		/* =========================== Keyboard =========================== */
+		addKeyStateListener("right", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && pressed)
+			{
+				_customEvent_Moving();
+			}
+		});
+		
+		/* =========================== Keyboard =========================== */
+		addKeyStateListener("left", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && released)
+			{
+				_customEvent_NotMoving();
+			}
+		});
+		
+		/* =========================== Keyboard =========================== */
+		addKeyStateListener("right", function(pressed:Bool, released:Bool, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && released)
+			{
+				_customEvent_NotMoving();
 			}
 		});
 		
