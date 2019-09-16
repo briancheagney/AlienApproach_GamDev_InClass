@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="1" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="1" id="-1">
+                <create-actor3 comment="false" x="26" y="40">
+                    <actortype eid="13" id="0"/>
+                    <get-xy comment="false" id="1" x="0" y="0">
+                        <ACTOR eid="this" id="0"/>
+                        <int id="1" val="0"/>
+                    </get-xy>
+                    <get-xy comment="false" id="2" x="0" y="0">
+                        <ACTOR eid="this" id="0"/>
+                        <int id="1" val="1"/>
+                    </get-xy>
+                    <int id="3" val="1"/>
+                </create-actor3>
+                <set-val-25-1 comment="false" x="26" y="80">
+                    <ACTOR eid="lastcreated" id="0"/>
+                </set-val-25-1>
+                <set-val-25-2 comment="false" x="26" y="107">
+                    <randint comment="false" id="0" x="0" y="0">
+                        <int id="0" val="3"/>
+                        <int id="1" val="6"/>
+                    </randint>
+                </set-val-25-2>
+                <dolater comment="false" x="26" y="132">
+                    <group eventID="1" id="-1">
+                        <say-this comment="false" x="37" y="159">
+                            <int id="0" val="WaitTime"/>
+                        </say-this>
+                    </group>
+                    <int id="0" val="2"/>
+                    <ACTOR eid="this" id="2"/>
+                </dolater>
+            </group>
+        </init>
+    </group>
+    <group eventID="1" id="-1"/>
+    <group eventID="2" id="0">
+        <event-custom comment="false" x="15" y="15">
+            <group eventID="2" id="-1">
+                <set-xy comment="false" x="26" y="40">
+                    <get-val-25-1 comment="false" id="0" x="0" y="0"/>
+                    <int id="1" val="0"/>
+                    <get-xy comment="false" id="2" x="0" y="0">
+                        <ACTOR eid="this" id="0"/>
+                        <int id="1" val="0"/>
+                    </get-xy>
+                </set-xy>
+                <set-xy comment="false" x="26" y="80">
+                    <get-val-25-1 comment="false" id="0" x="0" y="0"/>
+                    <int id="1" val="1"/>
+                    <get-xy comment="false" id="2" x="0" y="0">
+                        <ACTOR eid="this" id="0"/>
+                        <int id="1" val="1"/>
+                    </get-xy>
+                </set-xy>
+                <set-dxy comment="false" x="26" y="120">
+                    <get-val-25-1 comment="false" id="0" x="0" y="0"/>
+                    <int id="1" val="1"/>
+                    <int id="2" val="10"/>
+                </set-dxy>
+            </group>
+            <int id="0" val="Drop"/>
+        </event-custom>
+    </group>
+    <group eventID="2" id="-1"/>
+    <group eventID="4" id="0">
+        <event-custom comment="false" x="15" y="15">
+            <group eventID="4" id="-1">
+                <set-val-25-2 comment="false" x="26" y="40">
+                    <randint comment="false" id="0" x="0" y="0">
+                        <int id="0" val="3"/>
+                        <int id="1" val="10"/>
+                    </randint>
+                </set-val-25-2>
+                <dolater comment="false" x="26" y="65">
+                    <group eventID="4" id="-1">
+                        <create-actor3 comment="false" x="37" y="97">
+                            <actortype eid="13" id="0"/>
+                            <get-xy comment="false" id="1" x="0" y="0">
+                                <ACTOR eid="this" id="0"/>
+                                <int id="1" val="0"/>
+                            </get-xy>
+                            <get-xy comment="false" id="2" x="0" y="0">
+                                <ACTOR eid="this" id="0"/>
+                                <int id="1" val="1"/>
+                            </get-xy>
+                            <int id="3" val="1"/>
+                        </create-actor3>
+                        <set-val-25-1 comment="false" x="37" y="137">
+                            <ACTOR eid="lastcreated" id="0"/>
+                        </set-val-25-1>
+                        <say-this comment="false" x="37" y="164">
+                            <int id="0" val="Drop"/>
+                        </say-this>
+                    </group>
+                    <get-val-25-2 comment="false" id="0" x="0" y="0"/>
+                    <ACTOR eid="this" id="2"/>
+                </dolater>
+            </group>
+            <int id="0" val="WaitTime"/>
+        </event-custom>
+    </group>
+    <group eventID="4" id="-1"/>
+    <group eventID="5" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="5" id="-1">
+                <if comment="false" x="26" y="40">
+                    <group eventID="5" id="-1">
+                        <die comment="false" x="37" y="78">
+                            <ACTOR eid="var" id="0" vid="1"/>
+                        </die>
+                        <say-this comment="false" x="37" y="105">
+                            <int id="0" val="WaitTime"/>
+                        </say-this>
+                    </group>
+                    <more comment="false" id="0" x="0" y="0">
+                        <get-xy comment="false" id="0" x="0" y="0">
+                            <ACTOR eid="var" id="0" vid="1"/>
+                            <int id="1" val="1"/>
+                        </get-xy>
+                        <screen-wh comment="false" id="1" x="0" y="0">
+                            <int id="0" val="1"/>
+                        </screen-wh>
+                    </more>
+                </if>
+            </group>
+        </step>
+    </group>
+    <group eventID="5" id="-1"/>
+</groups>
