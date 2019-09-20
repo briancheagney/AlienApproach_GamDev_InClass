@@ -14,20 +14,20 @@
     </group>
     <group eventID="1" id="-1"/>
     <group eventID="2" id="0">
-        <step comment="false" x="39" y="17">
+        <step comment="false" x="63" y="61">
             <group eventID="2" id="-1">
-                <set-val-16-1 comment="false" x="50" y="42">
+                <set-val-16-1 comment="false" x="74" y="86">
                     <plus comment="false" id="0" x="0" y="0">
                         <get-val-16-1 comment="false" id="0" x="0" y="0"/>
                         <int id="1" val="1"/>
                     </plus>
                 </set-val-16-1>
-                <print comment="false" x="50" y="72">
+                <print comment="false" x="74" y="116">
                     <get-val-16-1 comment="false" id="0" x="0" y="0"/>
                 </print>
-                <if comment="false" x="50" y="97">
+                <if comment="false" x="74" y="141">
                     <group eventID="2" id="-1">
-                        <set-val-16-2 comment="false" x="61" y="127">
+                        <set-val-16-2 comment="false" x="85" y="171">
                             <true comment="false" id="0" x="0" y="0"/>
                         </set-val-16-2>
                     </group>
@@ -36,18 +36,18 @@
                         <int id="1" val="180"/>
                     </eq>
                 </if>
-                <if comment="false" x="50" y="164">
+                <if comment="false" x="74" y="208">
                     <group eventID="2" id="-1">
-                        <set-val-16-2 comment="false" x="61" y="194">
+                        <set-val-16-2 comment="false" x="85" y="238">
                             <false comment="false" id="0" x="0" y="0"/>
                         </set-val-16-2>
-                        <create-actor3 comment="false" x="61" y="219">
+                        <create-actor3 comment="false" x="85" y="263">
                             <actortype eid="25" id="0"/>
                             <int id="1" val="0"/>
                             <int id="2" val="0"/>
                             <int id="3" val="0"/>
                         </create-actor3>
-                        <create-actor3 comment="false" x="61" y="246">
+                        <create-actor3 comment="false" x="85" y="290">
                             <actortype eid="27" id="0"/>
                             <int id="1" val="0"/>
                             <int id="2" val="400"/>
