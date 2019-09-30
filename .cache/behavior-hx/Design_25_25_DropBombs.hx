@@ -72,7 +72,7 @@ class Design_25_25_DropBombs extends ActorScript
 		_WaitTime = randomInt(3, 10);
 		runLater(1000 * _WaitTime, function(timeTask:TimedTask):Void
 		{
-			createRecycledActor(getActorType(13), actor.getX(), actor.getY(), Script.MIDDLE);
+			createRecycledActor(getActorType(36), actor.getX(), actor.getY(), Script.MIDDLE);
 			_Bomb = getLastCreatedActor();
 			_customEvent_Drop();
 		}, actor);
@@ -101,8 +101,9 @@ class Design_25_25_DropBombs extends ActorScript
 	{
 		
 		/* ======================== When Creating ========================= */
-		createRecycledActor(getActorType(13), actor.getX(), actor.getY(), Script.MIDDLE);
+		createRecycledActor(getActorType(36), actor.getX(), actor.getY(), Script.MIDDLE);
 		_Bomb = getLastCreatedActor();
+		recycleActor(_Bomb);
 		_WaitTime = randomInt(3, 6);
 		runLater(1000 * 2, function(timeTask:TimedTask):Void
 		{
